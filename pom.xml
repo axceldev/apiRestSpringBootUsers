@@ -14,9 +14,9 @@
 	<packaging>war</packaging>
 	<name>test1</name>
 	<description>Crear servicios rest en spring boot</description>
-	<!--<properties>
+	<properties>
 		<java.version>11</java.version>
-	</properties>-->
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

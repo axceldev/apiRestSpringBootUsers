@@ -1,6 +1,7 @@
 package com.example.test1.controllers;
 
-import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Optional;
 
 import com.example.test1.models.UserModel;
@@ -24,13 +25,13 @@ public class UserController {
     
 
     @GetMapping
-    public ArrayList<UserModel> getAllUsers(){
+    public List<UserModel> getAllUsers(){
         return userService.getAllUsers();
     }
 
     @PostMapping
     public UserModel saveUser(@RequestBody UserModel user){
-        return this.userService.saveUsers(user);
+        return userService.saveUsers(user);
     }
 
     @GetMapping(path = "/{idUser}")
@@ -39,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping("/query")
-    public ArrayList<UserModel> getUsersByName(@RequestParam("name") String name){
+    public List<UserModel> getUsersByName(@RequestParam("name") String name){
         return this.userService.getUsersByName(name);
     }
 

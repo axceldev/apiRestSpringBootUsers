@@ -1,6 +1,7 @@
 package com.example.test1.services;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import com.example.test1.models.UserModel;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     UserRepository userRepository;
-    public ArrayList<UserModel> getAllUsers(){
+    public List<UserModel> getAllUsers(){
         return (ArrayList<UserModel>) userRepository.findAll();
     }
 
@@ -25,8 +26,8 @@ public class UserService {
         return userRepository.findById(idUser);
     }
 
-    public ArrayList<UserModel> getUsersByName(String name){
-        return (ArrayList<UserModel>) userRepository.findUsersByName(name);
+    public List<UserModel> getUsersByName(String name){
+        return userRepository.findUsersByName(name);
     }
 
     public boolean deleteUserById(Integer idUser){
